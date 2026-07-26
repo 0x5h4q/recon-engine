@@ -1,0 +1,16 @@
+{
+  "body": "{\"note\": \"route proof is emitted by the signal service\", \"signal_service\": 22839, \"status\": \"degraded\", \"support_password\": \"5-sPXIDWBaSEx_Kr2M0h\", \"support_user\": \"reviewer9f\"}\n",
+  "headers": {
+    "Content-Length": "178",
+    "Content-Type": "application/json",
+    "Date": "Sun, 26 Jul 2026 08:42:43 GMT",
+    "Server": "TransitGateway/2.4 ",
+    "X-Runtime-Profile": "P6"
+  },
+  "host": "127.0.0.1",
+  "method": "GET",
+  "path": "/ops-diagnostics",
+  "port": 18286,
+  "status": 200,
+  "timestamp": 1785055363.823528
+}

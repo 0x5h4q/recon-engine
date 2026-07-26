@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Recon Engine Report</title>
+<style>
+body {
+    font-family: monospace;
+    background: #050508;
+    color: #e8e8f0;
+    padding: 2rem;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #333;
+    padding: 0.5rem;
+}
+.flag {
+    color: #4ade80;
+}
+</style>
+</head>
+<body>
+
+<h1>EH-A1 Recon Report</h1>
+
+<p>Runtime ID:
+c3368becfc1610f1
+</p>
+
+<p>Profile:
+P6
+</p>
+
+<p>Generated:
+2026-07-26T10:27:52.472989Z
+</p>
+
+<table>
+<tr>
+<th>Protocol</th>
+<th>Target</th>
+<th>Service</th>
+<th>Confidence</th>
+<th>Notes</th>
+</tr>
+
+
+<tr>
+<td>tcp</td>
+<td>127.0.0.1:22839</td>
+<td>signal</td>
+<td>high</td>
+<td>CAPS response: commands=CAPS,ROUTE,QUIT; framing=line; auth=none</td>
+</tr>
+
+<tr>
+<td>tcp</td>
+<td>127.0.0.1:22839</td>
+<td>signal</td>
+<td>high</td>
+<td>ROUTE: vhost=console-0a1062c.keystone.local, route_key=46045394347b313e</td>
+</tr>
+
+<tr>
+<td>http</td>
+<td>127.0.0.1:18286</td>
+<td>http</td>
+<td>high</td>
+<td>Root with vhost console-0a1062c.keystone.local</td>
+</tr>
+
+<tr>
+<td>http</td>
+<td>127.0.0.1:18286</td>
+<td>http</td>
+<td>high</td>
+<td>robots.txt: User-agent: *
+Disallow: /ops-diagnostics
+Disallow: /user.txt
+</td>
+</tr>
+
+<tr>
+<td>http</td>
+<td>127.0.0.1:18286</td>
+<td>http</td>
+<td>high</td>
+<td>ops-diagnostics: user=reviewer9f, signal=22839</td>
+</tr>
+
+<tr>
+<td>http</td>
+<td>127.0.0.1:18286</td>
+<td>foothold</td>
+<td>high</td>
+<td>user.txt obtained</td>
+</tr>
+
+
+</table>
+
+<h2 class='flag'>Foothold: UBI-EH-A1-8B09534993830B00BCF11ADA</h2>
+
+</body>
+</html>

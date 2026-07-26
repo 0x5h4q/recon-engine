@@ -1,0 +1,13 @@
+{
+  "arguments": {
+    "output": "output",
+    "rate": 25,
+    "scope": "lab-runtime/scope.csv",
+    "target": "127.0.0.1"
+  },
+  "end_time": "2026-07-26T09:03:20.204236Z",
+  "engine_version": "1.0.0",
+  "exit_status": "no_route",
+  "schema_version": "1.0",
+  "start_time": "2026-07-26T09:03:20.203258Z"
+}

@@ -1,0 +1,6 @@
+{"method": "CAPS", "observed_at": "2026-07-26T08:42:43.799066Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 1, "service": "signal"}
+{"method": "ROUTE", "observed_at": "2026-07-26T08:42:43.802391Z", "peer": "127.0.0.1", "resource": "line", "result": 200, "sequence": 2, "service": "signal"}
+{"method": "GET", "observed_at": "2026-07-26T08:42:43.814736Z", "peer": "127.0.0.1", "resource": "/", "result": 200, "sequence": 3, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:42:43.819122Z", "peer": "127.0.0.1", "resource": "/robots.txt", "result": 200, "sequence": 4, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:42:43.823340Z", "peer": "127.0.0.1", "resource": "/ops-diagnostics", "result": 200, "sequence": 5, "service": "http"}
+{"method": "GET", "observed_at": "2026-07-26T08:42:43.826839Z", "peer": "127.0.0.1", "resource": "/user.txt", "result": 200, "sequence": 6, "service": "http"}
