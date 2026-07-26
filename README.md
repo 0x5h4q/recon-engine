@@ -1,32 +1,149 @@
-# EH-A1 Recon Engine
+# Recon Engine
 
-Scope-safe discovery engine for the UBI Stage 5 Advanced assessment.
+Scope-safe reconnaissance engine developed for the Ubuntu Bridge Initiative Ethical Hacking track assessment.
 
-## Quick start
+## Repository
 
-```bash
-# 1. Start the target
-python3 local_lab.py --marker UBI-A5-712868920958 --output lab-runtime
+This repository implements a reconnaissance engine that:
 
-# 2. Run the engine
-make run
+* Enforces scope before opening network connections
+* Records requests in an audit ledger
+* Discovers authorized services
+* Collects raw evidence artifacts
+* Produces normalized machine-readable output
+* Supports resumable execution
+* Preserves provenance from raw evidence to final result
 
-# 3. Run tests
-make test
+## Environment
+
+Tested on:
+
+* Linux
+* Python 3.14+
+* No external runtime dependencies required for engine execution
+
+## Repository Layout
+
+```text
+recon_engine/
+├── cli.py
+├── scope.py
+├── probe.py
+├── normalize.py
+├── ledger.py
+└── __init__.py
+
+tests/
+└── test_fixtures.py
+
+final-run/
+├── normalized/
+├── raw/
+├── report.html
+├── foothold-evidence.txt
+└── run.json
+
+parser-fixtures.json
+assessment-manifest.json
+continuity-record.md
+integrity-attestation.md
+evidence-index.csv
+scope-register.csv
 ```
 
-## Architecture
+## Build
 
-- `scope.py` — Parse scope.csv and enforce before every request
-- `discovery.py` — DNS, wildcard baseline, vhost detection
-- `probe.py` — HTTP/HTTPS/TLS probes with SNI
-- `fingerprint.py` — Service identification
-- `normalize.py` — Versioned schema output
-- `ledger.py` — Atomic request ledger with resume state
-- `cli.py` — Entry point
+Run the assessment engine:
 
-## Scope enforcement
+```bash
+python -m recon_engine.cli \
+  --target 127.0.0.1 \
+  --scope lab-runtime-new/scope.csv \
+  --output final-run
+```
 
-Every network call is wrapped by `scope.check()` which validates against
-`scope.csv` before opening a socket. Out-of-scope destinations are rejected
-with zero packets sent.
+Alternatively:
+
+```bash
+make run
+```
+
+## Test
+
+Run the published fixture suite:
+
+```bash
+pytest tests/test_fixtures.py -v
+```
+
+Generate machine-readable test results:
+
+```bash
+pytest tests/test_fixtures.py \
+  --junitxml=test-results.xml
+```
+
+## Scope Enforcement
+
+All outbound destinations are validated through the scope engine before network activity occurs.
+
+Authorized targets are defined in:
+
+```text
+lab-runtime-new/scope.csv
+```
+
+Out-of-scope destinations are rejected before a socket is opened.
+
+## Output
+
+Primary outputs:
+
+```text
+final-run/run.json
+final-run/request-ledger.csv
+final-run/request-ledger.jsonl
+final-run/normalized/assets.jsonl
+final-run/report.html
+final-run/foothold-evidence.txt
+```
+
+## Evidence
+
+Raw evidence is preserved under:
+
+```text
+final-run/raw/
+raw-output/
+```
+
+Every normalized finding retains a locator back to its originating raw artifact.
+
+## Published Fixture Results
+
+Fixture suite:
+
+```text
+20 passed
+0 failed
+```
+
+Machine-readable results:
+
+```text
+test-results.xml
+```
+
+## Git Revision
+
+Current submission branch:
+
+```text
+main
+```
+
+Latest commit:
+
+```text
+2429e81
+```
