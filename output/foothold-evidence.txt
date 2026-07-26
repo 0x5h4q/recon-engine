@@ -1,6 +1,0 @@
-Flag: Transit edge online. Route is not provisioned.
-VHost: console-0a1062c.keystone.local
-Route Key: 0ae5f2c386e1de5b
-Username: reviewer9f
-Signal Port: 22839
-Web Port: 18286
