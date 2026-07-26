@@ -1,0 +1,16 @@
+{
+  "body": "UBI-EH-A1-8B09534993830B00BCF11ADA\n",
+  "headers": {
+    "Content-Length": "35",
+    "Content-Type": "text/plain; charset=utf-8",
+    "Date": "Sun, 26 Jul 2026 10:27:52 GMT",
+    "Server": "TransitGateway/2.4 ",
+    "X-Runtime-Profile": "P6"
+  },
+  "host": "127.0.0.1",
+  "method": "GET",
+  "path": "/user.txt",
+  "port": 18286,
+  "status": 200,
+  "timestamp": 1785061672.4698808
+}

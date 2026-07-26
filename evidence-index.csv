@@ -1,0 +1,11 @@
+Claim,Evidence File,Locator,Reasoning
+Signal service discovered,final-run/normalized/assets.jsonl,Record 1,Service identified on TCP 22839
+Route information obtained,final-run/normalized/assets.jsonl,Record 2,ROUTE response contains vhost and route key
+HTTP service discovered,final-run/normalized/assets.jsonl,Record 3,HTTP service identified on TCP 18286
+robots.txt retrieved,final-run/raw/http/127.0.0.1_18286_GET__robots.txt_200.json,body,Discovery directives observed
+Credentials discovered,final-run/raw/http/127.0.0.1_18286_GET__ops-diagnostics_200.json,body,Username and service information exposed
+Foothold flag obtained,final-run/raw/http/127.0.0.1_18286_GET__user.txt_200.json,body,user.txt response returned flag
+Scope enforcement implemented,recon_engine/scope.py,module,All network destinations validated against scope
+Request audit trail maintained,final-run/request-ledger.csv,all rows,Every request recorded with status
+Resume capability implemented,recon_engine/ledger.py,module,Ledger tracks completed requests
+Public fixtures implemented,tests/test_fixtures.py,module,Published fixture coverage

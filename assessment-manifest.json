@@ -1,0 +1,47 @@
+{
+"schema_version": "1.0",
+"project_id": "EH-A1-RECON-ENGINE",
+"variant": "P6",
+"candidate_binding": "UBI-2026-0095",
+"assigned_marker": "UBI-A5-712868920958",
+"runtime_id": "c3368becfc1610f1",
+"verified_before_use": true,
+"commit": "0232ceb60c5fd5283094e8a7fe254c65d7bfb923",
+"supported_environment": {
+"os": "Arch Linux",
+"cpu": "x86_64",
+"memory_gb": 8
+},
+"tool_versions": {
+"python": "3.14.4",
+"git": "repository-managed"
+},
+"commands": {
+"build": "python -m recon_engine.cli --target 127.0.0.1 --scope lab-runtime-new/scope.csv --output final-run",
+"test": "python -m unittest discover tests -v",
+"clean": "rm -rf final-run"
+},
+"results": {
+"public_tests": {
+"implemented": 20,
+"failed": 0
+},
+"foothold_obtained": true
+},
+"inputs": [
+"lab-runtime-new/scope.csv",
+"lab-runtime-new/assignment.json",
+"parser-fixtures.json"
+],
+"outputs": [
+"final-run/normalized/assets.jsonl",
+"final-run/request-ledger.csv",
+"final-run/foothold-evidence.txt",
+"final-run/report.html"
+],
+"known_limitations": [
+"Assessment implementation targets the supplied Stage 5 runtime profile.",
+"No exploitation capability is included.",
+"Scope enforcement rejects all non-authorized destinations before socket creation."
+]
+}
