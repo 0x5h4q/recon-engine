@@ -124,7 +124,7 @@ class TestParserFixtures:
         assert result["product"] == "OpenSSH_9.2"
 
     def test_malformed_json(self):
-        with pytest.raises(json.JSONDecodeError):
+       with pytest.raises(json.JSONDecodeError):
             json.loads("{host:broken")
 
     def test_missing_port(self):
